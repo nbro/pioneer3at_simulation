@@ -1,0 +1,24 @@
+version: '3'
+services:
+ pioneer-simulation:
+  command: bash
+  image: pioneer-simulation
+  volumes:
+    - ./catkin_ws_src:/root/catkin_ws/src:rw
+    - ./dataset_csv:/root/csv:rw
+    - "tmp:/tmp:rw"
+    - /tmp/.X11-unix:/tmp/.X11-unix:rw
+  environment:
+    - "DISPLAY"
+    - "QT_X11_NO_MITSHM=1"
+  #devices:
+  #  - /dev/input/js0
+  #  - /dev/ttyUSB0
+  ports:
+    - "8888:8888"
+  build:
+    dockerfile: docker/Dockerfile
+    context: .
+
+volumes:
+  tmp:
