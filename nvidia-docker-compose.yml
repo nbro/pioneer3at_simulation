@@ -1,0 +1,28 @@
+services:
+  pioneer-simulation:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    command: bash
+    devices:
+    - /dev/nvidia0
+    - /dev/nvidiactl
+    - /dev/nvidia-uvm
+    - /dev/nvidia-uvm-tools
+    environment:
+    - DISPLAY
+    - QT_X11_NO_MITSHM=1
+    image: pioneer-simulation
+    ports:
+    - 8888:8888
+    volumes:
+    - ./catkin_ws_src:/root/catkin_ws/src:rw
+    - ./dataset_csv:/root/csv:rw
+    - tmp:/tmp:rw
+    - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    - nvidia_driver_410.73:/usr/local/nvidia:ro
+version: '3'
+volumes:
+  nvidia_driver_410.73:
+    external: true
+  tmp: null

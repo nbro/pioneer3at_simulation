@@ -7,18 +7,34 @@
   <license>BSD</license>
 
   <buildtool_depend>catkin</buildtool_depend>
-  
-  <build_depend>roscpp</build_depend>  
+
+  <build_depend>gazebo_msgs</build_depend>
+  <build_depend>gazebo_ros</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>roscpp</build_depend>
   <build_depend>sensor_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
   <build_depend>nav_msgs</build_depend>
+  <build_depend>gazebo_dev</build_depend>
   <build_depend>tf</build_depend>
-  
+
+  <run_depend>gazebo_msgs</run_depend>
+  <run_depend>gazebo_ros</run_depend>
+  <run_depend>geometry_msgs</run_depend>
   <run_depend>roscpp</run_depend>
   <run_depend>sensor_msgs</run_depend>
+  <run_depend>std_msgs</run_depend>
   <run_depend>nav_msgs</run_depend>
+  <run_depend>gazebo_dev</run_depend>
+  <run_depend>nodelet</run_depend>
+  <run_depend>angles</run_depend>
+  <run_depend>urdf</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>message_runtime</run_depend>
+  <run_depend>message_generation</run_depend>
   <run_depend>tf</run_depend>
   <run_depend>joy</run_depend>
   <run_depend>ps3joy</run_depend>
-  
+
 
 </package>

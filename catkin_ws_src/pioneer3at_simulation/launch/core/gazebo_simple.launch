@@ -21,7 +21,7 @@
   <arg name="pitch" default="0.0"/>
   <arg name="yaw" default="0.0"/>
 
-	
+
   <arg name="model" default="$(find pioneer3at_simulation)/urdf/pioneer3at.urdf.xacro"/>
 
   <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
@@ -45,8 +45,9 @@
     <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="screen"/>
   </group>
 
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"	args="-x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw) -urdf -model $(arg name) -param robot_description" />
 
-  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"	args="-x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw) -urdf -model pioneer3at -param robot_description" />
-
+  <!-- robot_state publisher -->
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
 
 </launch>
