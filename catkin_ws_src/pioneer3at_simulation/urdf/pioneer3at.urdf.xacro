@@ -564,8 +564,8 @@
   <xacro:custom_camera name="down" color="White" x="0.0" y="0.0" z="-0.17" roll="0.0" pitch="1.57" yaw="0.0" h_fov="1.0" width="100" height="100" near="0.01" far="1.0"/>
 
   <!-- laser sensors -->
-  <xacro:custom_laser name="one" color="White" x="0.24" y="0" z="0.014" roll="0" pitch="0" yaw="0" samples="50" resolution="1" min_angle="${-PI/6}" max_angle="${PI/6}" min_range="0.10" max_range="5.0" range_resolution="0.01"/>
-  <xacro:custom_laser name="two" color="White" x="-0.22" y="0" z="0.014" roll="0" pitch="0" yaw="${PI}" samples="50" resolution="1" min_angle="${-PI/6}" max_angle="${PI/6}" min_range="0.10" max_range="5.0" range_resolution="0.01"/>
+  <xacro:custom_laser name="one" color="White" x="0.24" y="0" z="0.014" roll="0" pitch="0" yaw="0" samples="3" resolution="1" min_angle="${-PI/100}" max_angle="${PI/100}" min_range="0.10" max_range="5.0" range_resolution="0.01"/>
+  <xacro:custom_laser name="two" color="White" x="-0.22" y="0" z="0.014" roll="0" pitch="0" yaw="${PI}" samples="3" resolution="1" min_angle="${-PI/100}" max_angle="${PI/100}" min_range="0.10" max_range="5.0" range_resolution="0.01"/>
 
   <!-- skid steer controller -->
   <xacro:p3at_drive_side side="left" reflect="1"/>
