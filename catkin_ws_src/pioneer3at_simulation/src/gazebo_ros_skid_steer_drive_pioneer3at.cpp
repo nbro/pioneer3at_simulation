@@ -398,7 +398,7 @@ namespace gazebo {
   }
 
   void GazeboRosSkidSteerDrive::publishOdometry(double step_time) {
-    ros::Time current_time = ros::Time::now();
+    ros::Time current_time = this->world->SimTime();//ros::Time::now();
     std::string odom_frame =
       tf::resolve(tf_prefix_, odometry_frame_);
     std::string base_footprint_frame =
