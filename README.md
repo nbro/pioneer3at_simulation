@@ -1,28 +1,30 @@
 # Custom Pioneer 3-AT simulation
 
-Simulation of the Pioneer 3-AT with several cameras attached to it.
+This is a ROS package that can be used to simulate a Pioneer 3-AT robot with several cameras attached to it. You can enable and disable certain cameras and other sensors, if you need.
 
-## Run
+## How to obtain this ROS package?
 
-### Docker
+You can simply clone this repo into your Catkin workspace's `src` folder by issuing the following command (from inside your workspace's `src` folder):
 
-There is a dockerfile you can build to run the container.
+    git clone https://github.com/nbro/pioneer3at_simulation.git
 
-### Host
-
-Or you can copy the `catkin_ws_src` to your ROS work-space and run it there.
+You will likely encounter several issues when you build your workspace if you're not using Gazebo 9.0.0. I recommend that you use [ROS Melodic](http://wiki.ros.org/Installation/Ubuntu) (with Gazebo 9.0.0.).
 
 ## Launch
 
-Run `roslaunch pioneer3at_simulation gazebo.launch world_name:=color_plane` to launch gazebo simulator + pioneer 3-AT model + custom map.
+To launch a Gazebo world with a Pioneer robot, you can issue the following command from the terminal
 
-### Data
+    roslaunch pioneer3at_simulation gazebo.launch world_name:=color_plane
 
-Using `rostopic list` you can see the available topics that are exposed from the simulation (i.e. odom, cameras, laser, contact points)
+In this case, the world called `color_plane` will be used with a _pioneer 3-AT model_ in the middle of it.
 
-### Control
+### ROS topics
 
-A `cmd_vel` topic is exposed so that linear and angular velocities can be sent to the simulated robot.
+Using `rostopic list`, you can see the available topics that are exposed from the simulation (e.g. `/pioneer3at/odom`).
+
+#### Control
+
+A `cmd_vel` topic is exposed, so that linear and angular velocities can be sent to the simulated robot.
 
 ## Customisation
 
