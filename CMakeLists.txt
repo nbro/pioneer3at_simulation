@@ -30,6 +30,8 @@ find_package(Boost ${MIN_BOOST_VERSION} REQUIRED system filesystem regex thread)
 
 find_package(Protobuf REQUIRED)
 
+catkin_python_setup()
+
 include_directories(${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS})
 link_directories(${GAZEBO_LIBRARY_DIRS})
 
@@ -94,6 +96,6 @@ install(DIRECTORY
   launch
   meshes
   models
-  config
+  config  scripts
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )

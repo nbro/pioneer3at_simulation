@@ -1,10 +1,11 @@
 <launch>
 
-  <arg name="world_name" default="empty"/>
+    <arg name="world_name" default="empty"/>
+<!--    <arg name="texture_name" default="color_jigsaw.png"/>-->
 
-	<include file="$(find pioneer3at_simulation)/launch/core/gazebo_simple.launch">
-      <arg name="world_name" value="$(arg world_name)"/>
-	</include>
-
+    <include file="$(find pioneer3at_simulation)/launch/core/gazebo_simple.launch">
+        <arg name="world_name" value="$(arg world_name)"/>
+<!--        <arg name="texture_name" value="$(arg texture_name)"/>-->
+    </include>
 
 </launch>

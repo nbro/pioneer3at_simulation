@@ -1,5 +1,8 @@
+#!/usr/bin/env python
+
 import numpy as np
 import os
+import random
 import rospkg
 import time
 from os import path
@@ -14,17 +17,12 @@ def get_abs_pkg_path(pkg_name):
 
 
 PACKAGE_NAME = "pioneer3at_simulation"
-TEXTURES_FOLDER = "models/color_plane/materials/textures"
+TEXTURES_FOLDER = "models/color_plane/materials/textures/custom"
 TEXTURES_FOLDER_PATH = path.join(get_abs_pkg_path(PACKAGE_NAME), TEXTURES_FOLDER)
 
 
-def generate_texture(texture_shape=(1024, 1024), scale=150.0, octaves=6, persistence=0.5, lacunarity=1.0,
-                     save_texture=True, texture_name=None, texture_extension=".png",
-                     textures_folder=TEXTURES_FOLDER_PATH, show_texture=False, white_range=[0.3, 0.5]):
-    assert len(white_range) == 2
-    assert all(isinstance(i, float) for i in white_range)
-    assert white_range[0] <= white_range[1]
-
+def generate_binary_texture(texture_shape=(1024, 1024), scale=100.0, octaves=6, persistence=0.5, lacunarity=2.0,
+                            color1_range=[0.0, 0.3], color1=0.9, color2=0.4):
     texture_array = np.zeros(texture_shape)
 
     for i in range(texture_shape[0]):
@@ -38,10 +36,24 @@ def generate_texture(texture_shape=(1024, 1024), scale=150.0, octaves=6, persist
                                                 repeaty=1024,
                                                 base=0)
 
-            if white_range[0] <= texture_array[i][j] <= white_range[1]:
-                texture_array[i][j] = 1.0  # white
+            if color1_range[0] <= texture_array[i][j] < color1_range[1]:
+                texture_array[i][j] = color1
             else:
-                texture_array[i][j] = 0.0  # black
+                texture_array[i][j] = color2
+
+    return texture_array
+
+
+def generate_random_binary_texture(save_texture=True, texture_name=None, texture_extension=".png",
+                                   textures_folder=TEXTURES_FOLDER_PATH, show_texture=False):
+    scale = random.uniform(100.0, 200.0)
+    octaves = random.randint(2, 16)
+    persistence = random.uniform(0.4, 1.0)
+    lacunarity = random.uniform(0.5, 2.0)
+    color1_range = [random.uniform(0.1, 0.2), random.uniform(0.2, 0.3)]
+
+    texture_array = generate_binary_texture(scale=scale, octaves=octaves, persistence=persistence,
+                                            lacunarity=lacunarity, color1_range=color1_range)
 
     if save_texture:
         if not isinstance(texture_name, str):
@@ -49,10 +61,12 @@ def generate_texture(texture_shape=(1024, 1024), scale=150.0, octaves=6, persist
         if not path.exists(textures_folder):
             os.makedirs(textures_folder)
         texture_path = path.join(textures_folder, texture_name + texture_extension)
-        toimage(texture_array).save(texture_path)
+        print texture_path
+        toimage(texture_array, cmin=0.0, cmax=1.0).save(texture_path)
     if show_texture:
-        toimage(texture_array).show()
+        toimage(texture_array, cmin=0.0, cmax=1.0).show()
 
 
 if __name__ == "__main__":
-    generate_texture()
+    for i in range(10):
+        generate_random_binary_texture()

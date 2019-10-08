@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
 <package>
+
     <name>pioneer3at_simulation</name>
     <version>0.1.0</version>
     <description>Pioneer 3AT simulation with additional sensors.</description>
-    <maintainer email="email@mail.com">R. Omar Chavez-Garcia</maintainer>
+    <maintainer email="email@mail.com">Nelson Brochado</maintainer>
     <license>BSD</license>
 
     <buildtool_depend>catkin</buildtool_depend>
@@ -36,7 +37,7 @@
     <run_depend>joy</run_depend>
     <run_depend>ps3joy</run_depend>
 
-    <exec_depend>python-rospkg</exec_depend>
+    <run_depend>python-rospkg</run_depend>
     <run_depend>python-numpy</run_depend>
     <run_depend>python-scipy</run_depend>
     <!--    <run_depend>python-noise</run_depend>-->
