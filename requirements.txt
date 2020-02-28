@@ -1,3 +1,4 @@
 noise
 numpy
 scipy
+Jinja2

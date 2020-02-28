@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import numpy as np
 import os
@@ -46,8 +47,8 @@ def generate_binary_texture(texture_shape=(1024, 1024), scale=100.0, octaves=6, 
 
 def generate_random_binary_texture(save_texture=True, texture_name=None, texture_extension=".png",
                                    textures_folder=TEXTURES_FOLDER_PATH, show_texture=False):
-    scale = random.uniform(100.0, 200.0)
-    octaves = random.randint(2, 16)
+    scale = random.uniform(100.0, 140.0)
+    octaves = random.randint(2, 8)
     persistence = random.uniform(0.4, 1.0)
     lacunarity = random.uniform(0.5, 2.0)
     color1_range = [random.uniform(0.1, 0.2), random.uniform(0.2, 0.3)]

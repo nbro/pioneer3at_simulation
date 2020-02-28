@@ -125,3 +125,5 @@ dmypy.json
 .pyre/
 
 .idea
+scripts/material_generator
+models/color_plane/materials/scripts/color_plane.material.jinja

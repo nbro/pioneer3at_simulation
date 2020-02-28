@@ -10,7 +10,7 @@ material ColorPlane/Image
 
               texture_unit
               {
-                texture custom/2019-10-07-22-35-10.png
+                texture color_jigsaw.png
               }
             }
           }

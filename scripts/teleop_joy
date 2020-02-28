@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-#
+# -*- coding: utf-8 -*-
+
 # Simple Joystick Control Node
 # Dereck Wonnacott (2013)
-#  
 
 import rospy
 from geometry_msgs.msg import Twist

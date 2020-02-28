@@ -10,13 +10,23 @@ You can simply clone this repo into your Catkin workspace's `src` folder by issu
 
 You will likely encounter several issues when you build your workspace if you're not using Gazebo 9.0.0. I recommend that you use [ROS Melodic](http://wiki.ros.org/Installation/Ubuntu) (with Gazebo 9.0.0.).
 
+## Install dependencies and build workspace 
+
+To install the dependencies required by this package, inside your workspace, execute the following command
+
+    rosdep install --ignore-packages-from-source --from-paths src
+
+Then you can build the workspace (with Catkin Tools)
+
+    catkin build
+
 ## Launch
 
 To launch a Gazebo world with a Pioneer robot, you can issue the following command from the terminal
 
-    roslaunch pioneer3at_simulation gazebo.launch world_name:=color_plane
+    roslaunch pioneer3at_simulation gazebo.launch world_name:=color_plane_bw
 
-In this case, the world called `color_plane` will be used with a _pioneer 3-AT model_ in the middle of it.
+In this case, the world called `color_plane_bw` will be used with a _pioneer 3-AT model_ in the middle of it. There's also another model called `color_plane`.
 
 ### ROS topics
 

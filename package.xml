@@ -40,6 +40,7 @@
     <run_depend>python-rospkg</run_depend>
     <run_depend>python-numpy</run_depend>
     <run_depend>python-scipy</run_depend>
+    <run_depend>python-jinja2</run_depend>
     <!--    <run_depend>python-noise</run_depend>-->
 
 
