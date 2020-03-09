@@ -561,6 +561,14 @@
 
 
     <!-- RGB cameras -->
+    <!--
+     width and height determine the resolution of the camera
+
+     h_fov determines the aperture of the camera
+
+     roll, pitch and yaw determine the orientation of the camera.
+     -->
+
     <xacro:custom_camera name="one" color="Red" x="0.24" y="0" z="0.04" roll="0" pitch="0.0" yaw="0" h_fov="1.3962634"
                          width="800" height="800" near="0.02" far="100"/>
     <!-- <xacro:custom_camera name="two" color="Blue" x="0.22" y="0.09" z="0.015" roll="0.2" pitch="0.1" yaw="-0.1" h_fov="1.3962634" width="800" height="800" near="0.02" far="100"/>
@@ -569,6 +577,9 @@
     <!-- 'RGB' downward sensor -->
     <xacro:custom_camera name="down" color="White" x="0.0" y="0.0" z="-0.17" roll="0.0" pitch="1.57" yaw="0.0"
                          h_fov="1.0" width="100" height="100" near="0.01" far="1.0"/>
+
+    <xacro:custom_camera name="crane" color="Orange" x="0.0" y="0.0" z="0.8" roll="0.0" pitch="1.57" yaw="0.0"
+                     h_fov="1.0" width="800" height="800" near="0.01" far="1.0"/>
 
     <!-- laser sensors -->
     <xacro:custom_laser name="one" color="White" x="0.24" y="0" z="0.014" roll="0" pitch="0" yaw="0" samples="3"

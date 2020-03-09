@@ -38,7 +38,9 @@ A `cmd_vel` topic is exposed, so that linear and angular velocities can be sent 
 
 ## Customisation
 
-Pioneer 3-AT model can be modified by editing the `pioneer3at.urdf.xacro` file (bottom section). There more cameras and laser sensors can be placed or the values of the current ones modified.
+Pioneer 3-AT model can be modified by editing the `pioneer3at.urdf.xacro` file (bottom section) or the file `model.sdf` under the `models` folder. 
+
+There more cameras and laser sensors can be placed or the values of the current ones modified.
 
 Boolean contact information is also provided for the wheels and main body. A developed gazebo plugin carries this out.
 
