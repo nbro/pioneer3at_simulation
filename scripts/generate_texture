@@ -18,12 +18,12 @@ def get_abs_pkg_path(pkg_name):
 
 
 PACKAGE_NAME = "pioneer3at_simulation"
-TEXTURES_FOLDER = "models/color_plane/materials/textures/custom"
+TEXTURES_FOLDER = "models/color_plane_bw/materials/textures/custom2"
 TEXTURES_FOLDER_PATH = path.join(get_abs_pkg_path(PACKAGE_NAME), TEXTURES_FOLDER)
 
 
 def generate_binary_texture(texture_shape=(1024, 1024), scale=100.0, octaves=6, persistence=0.5, lacunarity=2.0,
-                            color1_range=[0.0, 0.3], color1=0.9, color2=0.4):
+                            color1_range=[0.0, 0.3], color1=1.0, color2=0.0):
     texture_array = np.zeros(texture_shape)
 
     for i in range(texture_shape[0]):
