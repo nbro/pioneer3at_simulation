@@ -3,8 +3,8 @@
   <world name="default">
 
     <scene>
-      <background>0.1 0.5 1.0 1.0</background>
-      <ambient>0.1 0.5 1.0 1.0</ambient>
+      <background>0.7 0.73 0.38 0.0</background> <!-- Removes the color under the texture -->
+      <!-- <ambient>0.1 0.5 1.0 1.0</ambient> --> <!--This actually removes the blue on the texture itself -->
       <sky>
          <material>Gazebo/GreyGradientSky</material>
          <clouds>
